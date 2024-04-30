@@ -7,5 +7,9 @@ namespace WorldGeneration2D
     {
         [SerializeField]
         private Vector2Int chunkSize;
+
+        [SerializeField]
+        private int seed;
+
     }
 }
