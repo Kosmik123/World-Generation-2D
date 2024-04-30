@@ -10,19 +10,20 @@ namespace WorldGeneration2D
         [SerializeField]
         private int seed;
 
+        [SerializeField]
+        private GameObject chunkPrototype;
+
         private void Start()
         {
             using (new RandomSeed(seed))
             {
                 float perlinXOffest = Random.Range(-10000, 10000);
                 float perlinYOffest = Random.Range(-10000, 10000);
-                for (int j = -100; j < 100; j++)
+                for (int j = -10; j <= 10; j++)
                 {
-                    for (int i = -100; i < 100; i++)
+                    for (int i = -10; i <= 10; i++)
                     {
-                        var tile = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                        float height = Mathf.PerlinNoise(perlinXOffest + i / 10f, perlinYOffest + j / 10f);
-                        tile.transform.position = new Vector3(i, j, 10 * height);
+                        var chunk = Instantiate(chunkPrototype, new Vector3(10 * i, 10 * j, 0), Quaternion.identity, transform);
                     }
                 }
             }
