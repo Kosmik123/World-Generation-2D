@@ -3,7 +3,7 @@
 namespace WorldGeneration2D
 {
     [CreateAssetMenu]
-    public class TerrainGenerationSettings : ScriptableObject
+    public class GenerationSettings : ScriptableObject
     {
         [SerializeField]
         private Vector2 perlinOffset;

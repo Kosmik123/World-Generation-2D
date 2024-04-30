@@ -6,7 +6,7 @@ namespace WorldGeneration2D
     public class Chunk : MonoBehaviour
     {
         [SerializeField]
-        private TerrainGenerationSettings terrainGenerationSettings;
+        private GenerationSettings terrainGenerationSettings;
 
         [SerializeField]
         private Tilemap terrainTilemap;
