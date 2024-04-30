@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Terrain Generation Settings
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
   perlinOffset: {x: 1337, y: 8367}
-  perlinScale: {x: 20, y: 20}
+  perlinScale: {x: 40, y: 40}

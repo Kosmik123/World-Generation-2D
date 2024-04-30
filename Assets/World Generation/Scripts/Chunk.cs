@@ -12,7 +12,7 @@ namespace WorldGeneration2D
         private Tilemap terrainTilemap;
 
         [SerializeField]
-        private Tile groundTile;
+        private Tile[] tiles;
 
         private void Start()
         {
@@ -23,11 +23,10 @@ namespace WorldGeneration2D
                 for (int i = 0; i < 10; i++)
                 {
                     var tilePosition = (Vector2)transform.position + startingTilePosition + new Vector2(i, j);
-                    var height = terrainGenerationSettings.GetValue(tilePosition.x, tilePosition.y);
-                    if (height > 0.5f)
-                    {
-                        terrainTilemap.SetTile(new Vector3Int(i - 5, j - 5), groundTile);
-                    }
+                    var noiseValue = terrainGenerationSettings.GetValue(tilePosition.x, tilePosition.y);
+                    int tileIndex = Mathf.Clamp(Mathf.FloorToInt(noiseValue * tiles.Length), 0, tiles.Length - 1);
+
+                    terrainTilemap.SetTile(new Vector3Int(i - 5, j - 5), tiles[tileIndex]);
                 }
             }
         }

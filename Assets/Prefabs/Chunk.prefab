@@ -1191,4 +1191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   terrainGenerationSettings: {fileID: 11400000, guid: 1ca0ce42bb6421d45b6768aaaa0f29cd, type: 2}
   terrainTilemap: {fileID: 5738387078073617058}
-  groundTile: {fileID: 11400000, guid: 62195daeb18d70b4aa6392c22a8b17ec, type: 2}
+  tiles:
+  - {fileID: 11400000, guid: 62195daeb18d70b4aa6392c22a8b17ec, type: 2}
+  - {fileID: 11400000, guid: a53f44d10fb638b4ea369fbb27b702b4, type: 2}
+  - {fileID: 11400000, guid: f69c8494912055743b3ba782f32d90cd, type: 2}
