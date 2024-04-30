@@ -19,7 +19,7 @@ public class Movement2D : MonoBehaviour
 
     private void Update()
     {
-        Vector2 direction = new Vector2(
+        var direction = new Vector2(
             Input.GetAxis("Horizontal"),
             Input.GetAxis("Vertical"));
 
