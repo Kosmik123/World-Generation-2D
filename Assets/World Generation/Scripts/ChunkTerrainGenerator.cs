@@ -18,7 +18,7 @@ namespace WorldGeneration2D
         }
 
         [SerializeField]
-        private GenerationSettings terrainGenerationSettings;
+        private MapValueProvider terrainGenerationSettings;
 
         [SerializeField]
         private Tilemap terrainTilemap;

@@ -4,11 +4,11 @@ using WorldGeneration2D;
 public class MapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private GenerationSettings generationSettings1;
+    private MapValueProvider generationSettings1;
     [SerializeField]
-    private GenerationSettings generationSettings2;
+    private MapValueProvider generationSettings2;
     [SerializeField]
-    private GenerationSettings generationSettings3;
+    private MapValueProvider generationSettings3;
 
     [SerializeField] 
     private SpriteRenderer spriteRenderer;

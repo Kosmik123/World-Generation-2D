@@ -5,7 +5,7 @@ using UnityEngine;
 namespace WorldGeneration2D
 {
     [CreateAssetMenu]
-    public class GenerationSettings : ScriptableObject
+    public class PerlinMapValueProvider : MapValueProvider
     {
         [SerializeField]
         private Octave[] octaves;
@@ -18,7 +18,7 @@ namespace WorldGeneration2D
             noiseScale = Vector2.one;
         }
 
-        public float GetValue(float x, float y) => GetValue(x, y, noiseScale, octaves);
+        public override float GetValue(float x, float y) => GetValue(x, y, noiseScale, octaves);
 
         public static float GetValue(float x, float y, Vector2 noiseScale, IReadOnlyList<Octave> octaves)
         {
@@ -51,7 +51,7 @@ namespace WorldGeneration2D
         public readonly Vector2 Offset => offset;
     }
 
-    [CustomEditor(typeof(GenerationSettings))]
+    [CustomEditor(typeof(PerlinMapValueProvider))]
     public class GenerationSettingsEditor : Editor
     {
         private const int resolution = 100;
@@ -97,14 +97,14 @@ namespace WorldGeneration2D
 
         private void PopulatePreviewTexture()
         {
-            var generationSettings = target as GenerationSettings;
+            var generationSettings = target as MapValueProvider;
             float halfResolution = resolution / 2;
             for (int j = 0; j < resolution; j++)
             {
                 for (int i = 0; i < resolution; i++)
                 {
                     // one pixel in preview = one unit in world
-                    var pixelValue = generationSettings.GetValue(i- halfResolution, j - halfResolution);
+                    var pixelValue = generationSettings.GetValue(i - halfResolution, j - halfResolution);
                     colors[j * resolution + i] = Color.Lerp(Color.black, Color.white, pixelValue);
                 }
             }

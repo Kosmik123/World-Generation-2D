@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Terrain Generation Settings
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
   octaves:
-  - offset: {x: 123.18, y: 456}
+  - offset: {x: 0, y: 0}
+  - offset: {x: 1245, y: -1493}
   noiseScale: {x: 50, y: 50}
