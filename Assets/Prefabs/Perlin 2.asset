@@ -14,9 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
   octaves:
   - offset: {x: 967.9, y: -999}
-  - offset: {x: 1109.1, y: -975.9}
-  - offset: {x: 1034.8, y: -942.1}
-  noiseScale: {x: 120, y: 120}
+  noiseScale: {x: 80, y: 80}
   curve:
     serializedVersion: 2
     m_Curve:

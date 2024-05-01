@@ -1272,6 +1272,7 @@ GameObject:
   - component: {fileID: 1784562447151732814}
   - component: {fileID: 6141789009585349542}
   - component: {fileID: 3979473590617732671}
+  - component: {fileID: 6190910005819814282}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -1347,3 +1348,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 306390464087b084c9534957d2e253a5, type: 2}
   - {fileID: 11400000, guid: 94b0e51019368dd46b0f125de0760337, type: 2}
   - {fileID: 11400000, guid: 0a8dd9090c637ea46ac53aeb62a0fb60, type: 2}
+--- !u!156049354 &6190910005819814282
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040820628054259466}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0

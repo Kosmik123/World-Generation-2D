@@ -1,13 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace WorldGeneration2D
 {
-    public class WorldGenerator2D : MonoBehaviour
+    public class ChunksWorldManager : MonoBehaviour
     {
         [SerializeField]
         private Chunk chunkPrototype;
         [SerializeField]
         private ChunkSettings chunkSettings;
+
+        private readonly Dictionary<Vector2Int, Chunk> chunksByCoord = new Dictionary<Vector2Int, Chunk>();
 
         private void Start()
         {
@@ -17,7 +20,9 @@ namespace WorldGeneration2D
                 for (int i = -10; i <= 10; i++)
                 {
                     var chunk = Instantiate(chunkPrototype, new Vector3(realChunkSize.x * i, realChunkSize.y * j, 0), Quaternion.identity, transform);
-                    chunk.Init(chunkSettings, new Vector2Int(i, j));
+                    var chunkCoord = new Vector2Int(i, j);
+                    chunk.Init(chunkSettings, chunkCoord);
+                    chunksByCoord.Add(chunkCoord, chunk);
                 }
             }
         }
