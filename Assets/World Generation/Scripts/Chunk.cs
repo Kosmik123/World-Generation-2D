@@ -12,7 +12,7 @@ namespace WorldGeneration2D
         private Tilemap terrainTilemap;
 
         [SerializeField]
-        private Tile[] tiles;
+        private TileBase[] tiles;
 
         private void Start()
         {

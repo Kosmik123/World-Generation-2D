@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e36b82ffe287de446bbc8afe00faf23d, type: 3}
-  m_Name: Terrain Generation Settings
-  m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
+  m_Name: Small Scale Generation Settings
+  m_EditorClassIdentifier: 
   octaves:
-  - offset: {x: 123, y: 456}
-  noiseScale: {x: 100, y: 100}
+  - offset: {x: -564, y: 878}
+  noiseScale: {x: 70, y: 80}
