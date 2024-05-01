@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace WorldGeneration2D
 {
-    [CustomEditor(typeof(PerlinMapValueProvider))]
-    public class PerlinMapValueProviderEditor : Editor
+    [CustomEditor(typeof(MapValueProvider), editorForChildClasses: true)]
+    public class MapValueProviderEditor : Editor
     {
         private const int resolution = 100;
 
