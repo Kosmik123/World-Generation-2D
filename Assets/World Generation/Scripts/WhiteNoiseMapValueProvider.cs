@@ -22,9 +22,10 @@ namespace WorldGeneration2D
 
         public float GetValue(float x, float y, int? seed = null, uint? density = null, bool? inverted = null)
         {
-            return GetValue(x, y, seed.HasValue ? seed : this.seed, 
-                density.HasValue ? density : this.density,
-                inverted.HasValue ? inverted : this.inverted);
+            return WhiteNoiseMapValueProvider.GetValue(x, y, 
+                seed.HasValue ? (int)seed : this.seed, 
+                density.HasValue ? (uint)density : this.density,
+                inverted.HasValue ? (bool)inverted : this.inverted);
         }
 
         public static float GetValue(float x, float y, int seed, uint density, bool inverted)
