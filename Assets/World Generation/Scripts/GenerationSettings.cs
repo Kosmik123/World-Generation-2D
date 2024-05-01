@@ -115,7 +115,8 @@ namespace WorldGeneration2D
         public override void OnPreviewGUI(Rect r, GUIStyle background)
         {
             base.OnPreviewGUI(r, background);
-            EditorGUI.DrawPreviewTexture(r, PreviewTexture);
+            var textureRect = r;
+            EditorGUI.DrawPreviewTexture(textureRect, PreviewTexture);
         }
     }
 }

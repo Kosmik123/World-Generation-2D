@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Small Scale Generation Settings
   m_EditorClassIdentifier: 
   octaves:
-  - offset: {x: -75.24, y: 67.76}
-  - offset: {x: 80.71, y: -61.24}
+  - offset: {x: -75.24, y: 75.2}
+  - offset: {x: 84.8, y: -57.1}
   noiseScale: {x: 10, y: 10}
