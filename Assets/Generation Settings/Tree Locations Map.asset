@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tree Locations Map
   m_EditorClassIdentifier: 
   seed: 1073
-  density: 100
+  density: 50
   inverted: 1
