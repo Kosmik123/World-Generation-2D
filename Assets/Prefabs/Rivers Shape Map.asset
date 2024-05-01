@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e36b82ffe287de446bbc8afe00faf23d, type: 3}
-  m_Name: Small Scale Generation Settings
+  m_Name: Rivers Shape Map
   m_EditorClassIdentifier: 
   octaves:
-  - offset: {x: -78.2, y: 57.65}
-  - offset: {x: 5678, y: 64.5}
-  noiseScale: {x: 20, y: 10}
+  - offset: {x: -52, y: 61.2}
+  - offset: {x: 5684.4, y: 64.5}
+  - offset: {x: 5630, y: 65.3}
+  noiseScale: {x: 30, y: 30}
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.3008957
-      value: 0.0047302246
+      time: 0.45
+      value: 0
       inSlope: -0.15018593
       outSlope: -0.15018593
       tangentMode: 0
@@ -29,8 +30,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.13119344
     - serializedVersion: 3
-      time: 0.5
-      value: 1
+      time: 0.5001161
+      value: 0.9952847
       inSlope: -0.03508453
       outSlope: -0.03508453
       tangentMode: 0
@@ -38,8 +39,8 @@ MonoBehaviour:
       inWeight: 0.1344431
       outWeight: 0
     - serializedVersion: 3
-      time: 0.69525146
-      value: -0.0047302246
+      time: 0.55
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
