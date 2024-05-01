@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558143928314616024, guid: f2641064a31180f42831afb1fd2339fd, type: 3}
       propertyPath: m_Name
-      value: Tree Base (2) Variant
+      value: ForgetMeNot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
