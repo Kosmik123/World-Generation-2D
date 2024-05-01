@@ -349,6 +349,7 @@ MonoBehaviour:
   chunkPrototype: {fileID: 1784562447151732814, guid: 5047c35b1b7c39648bf722091407d036, type: 3}
   chunkSettings: {fileID: 11400000, guid: df8f916777f5fd843a53583dfa741892, type: 2}
   observerCamera: {fileID: 1020873580}
+  chunksCount: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -10,21 +10,63 @@ namespace WorldGeneration2D
         [SerializeField]
         private ChunkSettings chunkSettings;
 
+        [SerializeField]
+        private Camera observerCamera;
+
         private readonly Dictionary<Vector2Int, Chunk> chunksByCoord = new Dictionary<Vector2Int, Chunk>();
+
+        [SerializeField]
+        private int chunksCount = 0;
+
+        private void Reset()
+        {
+            observerCamera = Camera.main;
+        }
 
         private void Start()
         {
-            var realChunkSize = chunkSettings.RealChunkSize;
-            for (int j = -10; j <= 10; j++)
+            chunksCount = 0;
+            UpdateChunks();
+        }
+
+        private void Update()
+        {
+            UpdateChunks();
+        }
+
+        private void UpdateChunks()
+        {
+            float yExtent = observerCamera.orthographicSize;
+            float xExtent = yExtent * observerCamera.aspect;
+
+            var observerRelativePosition = observerCamera.transform.position - transform.position;
+            var bottomLeft = WorldToCoord(new Vector2(
+                Mathf.Floor(observerRelativePosition.x - xExtent),
+                Mathf.Floor(observerRelativePosition.y - yExtent)));
+
+            var topRight = WorldToCoord(new Vector2(
+                Mathf.Ceil(observerRelativePosition.x + xExtent),
+                Mathf.Ceil(observerRelativePosition.y + yExtent)));
+
+            for (int j = bottomLeft.y - 1; j <= topRight.y + 1; j++)
             {
-                for (int i = -10; i <= 10; i++)
+                for (int i = bottomLeft.x - 1; i <= topRight.x + 1; i++)
                 {
-                    var chunk = Instantiate(chunkPrototype, new Vector3(realChunkSize.x * i, realChunkSize.y * j, 0), Quaternion.identity, transform);
-                    var chunkCoord = new Vector2Int(i, j);
-                    chunk.Init(chunkSettings, chunkCoord);
-                    chunksByCoord.Add(chunkCoord, chunk);
+                    var coord = new Vector2Int(i, j);
+                    if (chunksByCoord.ContainsKey(coord) == false)
+                    {
+                        var chunk = Instantiate(chunkPrototype, new Vector3(chunkSettings.RealChunkSize.x * i, chunkSettings.RealChunkSize.y * j, 0), Quaternion.identity, transform);
+                        chunk.Init(chunkSettings, coord);
+                        chunksByCoord.Add(coord, chunk);
+                    }
                 }
             }
+            chunksCount = chunksByCoord.Count;
+        }
+
+        public Vector2Int WorldToCoord(Vector2 relativePosition)
+        {
+            return Vector2Int.RoundToInt(relativePosition / chunkSettings.RealChunkSize);
         }
     }
 }
