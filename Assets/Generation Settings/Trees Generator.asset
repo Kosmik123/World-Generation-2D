@@ -16,3 +16,8 @@ MonoBehaviour:
   - {fileID: 8988895162643038109, guid: 27e7e6f03fa5df943a8c112c50c1c38b, type: 3}
   - {fileID: 3568452396839201920, guid: 4da0c773bbd5ecf47934e51f1f3c94cd, type: 3}
   - {fileID: 7393589389854581266, guid: 701042e38c0d926439cad3d87b81d5fe, type: 3}
+  validTilesForTree:
+  - {fileID: 11400000, guid: 6e2b814dc58ee6345b9cfdad84c501d7, type: 2}
+  - {fileID: 11400000, guid: cd9e8c419a63514458f76ec003c293fb, type: 2}
+  - {fileID: 11400000, guid: 252b68fa0b331254da19a25769342654, type: 2}
+  - {fileID: 11400000, guid: d74fd6771da322d419bb3f53c65c2f91, type: 2}
