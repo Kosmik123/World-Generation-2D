@@ -34,11 +34,14 @@ namespace WorldGeneration2D
             {
                 for (int i = 0; i < settings.ChunkSize.x; i++)
                 {
+                    int tileCoordX = i - halfChunkSize.x;
+                    int tileCoordY = j - halfChunkSize.y;
+
                     var tilePosition = coord * settings.RealChunkSize + startingTileLocalPosition + new Vector2(i, j);
                     var noiseValue = terrainGenerationSettings.GetValue(tilePosition.x, tilePosition.y);
                     int tileIndex = Mathf.Clamp(Mathf.FloorToInt(noiseValue * tiles.Length), 0, tiles.Length - 1);
 
-                    terrainTilemap.SetTile(new Vector3Int(i - halfChunkSize.x, j - halfChunkSize.y), tiles[tileIndex]);
+                    terrainTilemap.SetTile(new Vector3Int(tileCoordX, tileCoordY), tiles[tileIndex]);
                 }
             }
         }
