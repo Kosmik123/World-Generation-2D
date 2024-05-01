@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Perlin 2
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
   octaves:
-  - offset: {x: 967.9, y: -999}
+  - offset: {x: 968.1, y: -999}
+  - offset: {x: 962.6, y: -1032.5}
   noiseScale: {x: 80, y: 80}
   curve:
     serializedVersion: 2

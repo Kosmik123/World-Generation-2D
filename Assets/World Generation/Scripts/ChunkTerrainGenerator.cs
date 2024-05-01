@@ -46,14 +46,19 @@ namespace WorldGeneration2D
                     int tileCoordY = j - halfChunkSize.y;
 
                     var tilePosition = Chunk.Coord * settings.RealChunkSize + startingTileLocalPosition + new Vector2(i, j);
-                    
-                    var temperature = temperatureMapProvider.GetValue(tilePosition.x, tilePosition.y);
-                    var humidity = humidityMapProvider.GetValue(tilePosition.x, tilePosition.y);
+                    var climate = GetClimateData(tilePosition.x, tilePosition.y);
 
-                    var biome = GetBiome(temperature, humidity);
+                    var biome = GetBiome(climate.temperature, climate.humidity);
                     terrainTilemap.SetTile(new Vector3Int(tileCoordX, tileCoordY), biome.Tile);
                 }
             }
+        }
+
+        public ClimateData GetClimateData(float x, float y)
+        {
+            var temperature = temperatureMapProvider.GetValue(x, y);
+            var humidity = humidityMapProvider.GetValue(x, y);
+            return new ClimateData(temperature, humidity);
         }
 
         private BiomeData GetBiome(float temperature, float humidity)
@@ -63,6 +68,18 @@ namespace WorldGeneration2D
                     return biome;
             
             return null;
+        }
+    }
+
+    public readonly struct ClimateData
+    {
+        public readonly float temperature;
+        public readonly float humidity;
+
+        public ClimateData(float temperature, float humidity)
+        {
+            this.temperature = temperature;
+            this.humidity = humidity;
         }
     }
 }

@@ -13,14 +13,13 @@ MonoBehaviour:
   m_Name: Perlin 1
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
   octaves:
-  - offset: {x: -40, y: -50}
-  - offset: {x: 20, y: 29.12}
-  noiseScale: {x: 80, y: 80}
+  - offset: {x: -24, y: -49.6}
+  noiseScale: {x: 100, y: 100}
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.10243225
       value: 0
       inSlope: -0.15018593
       outSlope: -0.15018593
@@ -29,7 +28,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.13119344
     - serializedVersion: 3
-      time: 1
+      time: 0.8911743
       value: 1
       inSlope: -0.16152763
       outSlope: -0.16152763

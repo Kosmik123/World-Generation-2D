@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace WorldGeneration2D
 {
-    [CustomEditor(typeof(MapValueProvider), editorForChildClasses: true)]
-    public class MapValueProviderEditor : Editor
+    [CustomEditor(typeof(ChunkTerrainGenerator))]
+    public class ChunkTerrainGeneratorEditor : Editor
     {
         private const int resolution = 100;
 
@@ -19,6 +19,13 @@ namespace WorldGeneration2D
             }
         }
 
+        private readonly Color32[] colors = new Color32[resolution * resolution];
+
+        private void OnEnable()
+        {
+            PopulatePreviewTexture();
+        }
+
         private static Texture2D CreateTexture()
         {
             return new Texture2D(resolution, resolution, TextureFormat.RGBA32, false, true)
@@ -27,20 +34,10 @@ namespace WorldGeneration2D
             };
         }
 
-        private readonly Color32[] colors = new Color32[resolution * resolution];
-
-        public override bool HasPreviewGUI() => true;
-
-        private void OnEnable()
-        {
-            PopulatePreviewTexture();
-        }
-
         public override void OnInspectorGUI()
         {
             EditorGUI.BeginChangeCheck();
             base.OnInspectorGUI();
-
             if (EditorGUI.EndChangeCheck() || _previewTexture == null)
             {
                 PopulatePreviewTexture();
@@ -49,20 +46,22 @@ namespace WorldGeneration2D
 
         private void PopulatePreviewTexture()
         {
-            var provider = target as MapValueProvider;
+            var biomeGenerator = target as ChunkTerrainGenerator;
             float halfResolution = resolution / 2;
             for (int j = 0; j < resolution; j++)
             {
                 for (int i = 0; i < resolution; i++)
                 {
                     // one pixel in preview = one unit in world
-                    var pixelValue = provider.GetValue(i - halfResolution, j - halfResolution);
-                    colors[j * resolution + i] = Color.Lerp(Color.black, Color.white, pixelValue);
+                    var climate = biomeGenerator.GetClimateData(i - halfResolution, j - halfResolution);
+                    colors[j * resolution + i] = new Color(climate.temperature, (climate.humidity + climate.temperature) / 2, climate.humidity);
                 }
             }
             PreviewTexture.SetPixels32(colors);
             PreviewTexture.Apply();
         }
+
+        public override bool HasPreviewGUI() => true;
 
         public override void OnPreviewGUI(Rect r, GUIStyle background)
         {
