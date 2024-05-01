@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36b82ffe287de446bbc8afe00faf23d, type: 3}
   m_Name: Terrain Generation Settings
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
-  perlinOffset: {x: 13787, y: 83673}
-  perlinScale: {x: 20, y: 20}
+  octaves:
+  - offset: {x: 123, y: 456}
+  - offset: {x: 78, y: 90}
+  noiseScale: {x: 10, y: 10}
