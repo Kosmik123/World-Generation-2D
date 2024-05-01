@@ -1350,6 +1350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aff80e1bcc637834a800b2d52016d54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  terrainTilemap: {fileID: 5738387078073617058}
   terrainGenerators:
   - {fileID: 11400000, guid: 17d076dca4442ce4bb4d7d19dd268181, type: 2}
-  terrainTilemap: {fileID: 5738387078073617058}
+  - {fileID: 11400000, guid: dd65e4c5db190fc40a81e441ade1aa30, type: 2}
