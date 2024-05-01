@@ -34,7 +34,6 @@ namespace WorldGeneration2D
             }
 
             float maxPossibleValue = 2 - 1f / (1 << (octavesCount - 1));
-
             return noiseValue / maxPossibleValue;
         }
     }

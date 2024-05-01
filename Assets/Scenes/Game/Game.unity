@@ -686,7 +686,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9494baa9c74eb45b173e738bf3f9b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chunkPrototype: {fileID: 5040820628054259466, guid: 5047c35b1b7c39648bf722091407d036, type: 3}
+  chunkPrototype: {fileID: 1784562447151732814, guid: 5047c35b1b7c39648bf722091407d036, type: 3}
+  chunkSettings: {fileID: 11400000, guid: df8f916777f5fd843a53583dfa741892, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

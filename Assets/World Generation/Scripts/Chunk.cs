@@ -14,19 +14,31 @@ namespace WorldGeneration2D
         [SerializeField]
         private TileBase[] tiles;
 
+        [SerializeField]
+        private Vector2Int coord;
+        public Vector2Int Coord => coord;
+
+        private ChunkSettings settings;
+
+        public void Init(ChunkSettings chunkSettings, Vector2Int coord)
+        {
+            settings = chunkSettings;
+            this.coord = coord;
+        }
+
         private void Start()
         {
-            var coord = Vector2Int.RoundToInt(transform.position / 10);
-            var startingTilePosition = -Vector2.one * 4.5f;
-            for (int j = 0; j < 10; j++)
+            Vector2Int halfChunkSize = settings.ChunkSize / 2;
+            var startingTileLocalPosition = (-settings.RealChunkSize + settings.TileSize) / 2;
+            for (int j = 0; j < settings.ChunkSize.y; j++)
             {
-                for (int i = 0; i < 10; i++)
+                for (int i = 0; i < settings.ChunkSize.x; i++)
                 {
-                    var tilePosition = (Vector2)transform.position + startingTilePosition + new Vector2(i, j);
+                    var tilePosition = coord * settings.RealChunkSize + startingTileLocalPosition + new Vector2(i, j);
                     var noiseValue = terrainGenerationSettings.GetValue(tilePosition.x, tilePosition.y);
                     int tileIndex = Mathf.Clamp(Mathf.FloorToInt(noiseValue * tiles.Length), 0, tiles.Length - 1);
 
-                    terrainTilemap.SetTile(new Vector3Int(i - 5, j - 5), tiles[tileIndex]);
+                    terrainTilemap.SetTile(new Vector3Int(i - halfChunkSize.x, j - halfChunkSize.y), tiles[tileIndex]);
                 }
             }
         }
