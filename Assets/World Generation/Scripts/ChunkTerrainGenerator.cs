@@ -26,7 +26,7 @@ namespace WorldGeneration2D
         private Tilemap terrainTilemap;
 
         [SerializeField]
-        private TileBase[] tiles;
+        private BiomeData[] biomes;
 
         private void Start()
         {
@@ -50,11 +50,19 @@ namespace WorldGeneration2D
                     var temperature = temperatureMapProvider.GetValue(tilePosition.x, tilePosition.y);
                     var humidity = humidityMapProvider.GetValue(tilePosition.x, tilePosition.y);
 
-                    int tileIndex = Mathf.Clamp(Mathf.FloorToInt((humidity + temperature) / 2 * tiles.Length), 0, tiles.Length - 1);
-
-                    terrainTilemap.SetTile(new Vector3Int(tileCoordX, tileCoordY), tiles[tileIndex]);
+                    var biome = GetBiome(temperature, humidity);
+                    terrainTilemap.SetTile(new Vector3Int(tileCoordX, tileCoordY), biome.Tile);
                 }
             }
+        }
+
+        private BiomeData GetBiome(float temperature, float humidity)
+        {
+            foreach(var biome in biomes) 
+                if (biome.CheckCondition(Mathf.Clamp01(temperature), Mathf.Clamp01(humidity)))
+                    return biome;
+            
+            return null;
         }
     }
 }

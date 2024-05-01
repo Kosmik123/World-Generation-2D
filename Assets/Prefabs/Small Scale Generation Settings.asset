@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Small Scale Generation Settings
   m_EditorClassIdentifier: 
   octaves:
-  - offset: {x: -78.2, y: 75.2}
-  noiseScale: {x: 10, y: 10}
+  - offset: {x: -78.2, y: 57.65}
+  - offset: {x: 5678, y: 64.5}
+  noiseScale: {x: 20, y: 10}
   curve:
     serializedVersion: 2
     m_Curve:

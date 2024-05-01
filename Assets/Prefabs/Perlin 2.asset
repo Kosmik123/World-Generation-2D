@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e36b82ffe287de446bbc8afe00faf23d, type: 3}
-  m_Name: Terrain Generation Settings
+  m_Name: Perlin 2
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
   octaves:
-  - offset: {x: 0, y: 0}
-  - offset: {x: 20, y: 29.12}
-  noiseScale: {x: 50, y: 50}
+  - offset: {x: 967.9, y: -999}
+  - offset: {x: 1109.1, y: -975.9}
+  - offset: {x: 1034.8, y: -942.1}
+  noiseScale: {x: 120, y: 120}
   curve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.20870209
       value: 0
       inSlope: -0.15018593
       outSlope: -0.15018593
@@ -29,8 +30,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.13119344
     - serializedVersion: 3
-      time: 1
-      value: 1
+      time: 0.795105
+      value: 1.0070763
       inSlope: -0.16152763
       outSlope: -0.16152763
       tangentMode: 0
