@@ -1293,9 +1293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44cb2c1f68bae9146b57985ee38680c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generationSettings1: {fileID: 11400000, guid: 1ca0ce42bb6421d45b6768aaaa0f29cd, type: 2}
-  generationSettings2: {fileID: 11400000, guid: 637a67df5db81fb42accb3bf7da0c4d2, type: 2}
-  generationSettings3: {fileID: 11400000, guid: 89076aea293db704cb129ceae1d55f68, type: 2}
+  mapProvider1: {fileID: 11400000, guid: 1ca0ce42bb6421d45b6768aaaa0f29cd, type: 2}
+  mapProvider2: {fileID: 11400000, guid: 637a67df5db81fb42accb3bf7da0c4d2, type: 2}
+  mapProvider3: {fileID: 11400000, guid: 89076aea293db704cb129ceae1d55f68, type: 2}
   spriteRenderer: {fileID: 5476940928475246835}
 --- !u!114 &3979473590617732671
 MonoBehaviour:
@@ -1309,7 +1309,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cb915a7eca903742abe021b77da126b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  terrainGenerationSettings: {fileID: 11400000, guid: 1ca0ce42bb6421d45b6768aaaa0f29cd, type: 2}
+  temperatureMapProvider: {fileID: 11400000, guid: 1ca0ce42bb6421d45b6768aaaa0f29cd, type: 2}
+  humidityMapProvider: {fileID: 11400000, guid: 637a67df5db81fb42accb3bf7da0c4d2, type: 2}
   terrainTilemap: {fileID: 5738387078073617058}
   tiles:
   - {fileID: 11400000, guid: a53f44d10fb638b4ea369fbb27b702b4, type: 2}

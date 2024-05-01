@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:WorldGeneration2D:TerrainGenerationSettings
   octaves:
   - offset: {x: 0, y: 0}
-  - offset: {x: 1245, y: -1493}
+  - offset: {x: 20, y: 29.12}
   noiseScale: {x: 50, y: 50}

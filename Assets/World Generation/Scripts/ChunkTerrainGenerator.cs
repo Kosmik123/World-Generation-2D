@@ -18,7 +18,9 @@ namespace WorldGeneration2D
         }
 
         [SerializeField]
-        private MapValueProvider terrainGenerationSettings;
+        private MapValueProvider temperatureMapProvider;
+        [SerializeField]
+        private MapValueProvider humidityMapProvider;
 
         [SerializeField]
         private Tilemap terrainTilemap;
@@ -44,8 +46,11 @@ namespace WorldGeneration2D
                     int tileCoordY = j - halfChunkSize.y;
 
                     var tilePosition = Chunk.Coord * settings.RealChunkSize + startingTileLocalPosition + new Vector2(i, j);
-                    var noiseValue = terrainGenerationSettings.GetValue(tilePosition.x, tilePosition.y);
-                    int tileIndex = Mathf.Clamp(Mathf.FloorToInt(noiseValue * tiles.Length), 0, tiles.Length - 1);
+                    
+                    var temperature = temperatureMapProvider.GetValue(tilePosition.x, tilePosition.y);
+                    var humidity = temperatureMapProvider.GetValue(tilePosition.x, tilePosition.y);
+
+                    int tileIndex = Mathf.Clamp(Mathf.FloorToInt((humidity + temperature) / 2 * tiles.Length), 0, tiles.Length - 1);
 
                     terrainTilemap.SetTile(new Vector3Int(tileCoordX, tileCoordY), tiles[tileIndex]);
                 }

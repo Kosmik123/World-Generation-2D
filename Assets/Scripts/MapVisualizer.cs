@@ -4,11 +4,11 @@ using WorldGeneration2D;
 public class MapVisualizer : MonoBehaviour
 {
     [SerializeField]
-    private MapValueProvider generationSettings1;
+    private MapValueProvider mapProvider1;
     [SerializeField]
-    private MapValueProvider generationSettings2;
+    private MapValueProvider mapProvider2;
     [SerializeField]
-    private MapValueProvider generationSettings3;
+    private MapValueProvider mapProvider3;
 
     [SerializeField] 
     private SpriteRenderer spriteRenderer;
@@ -39,9 +39,9 @@ public class MapVisualizer : MonoBehaviour
             {
                 var x = position.x + i / 10f;
                 var y = position.y + j / 10f;
-                float value1 = generationSettings1 ? generationSettings1.GetValue(x, y) : 0.5f;
-                float value2 = generationSettings2 ? generationSettings2.GetValue(x, y) : 0.5f;
-                float value3 = generationSettings3 ? generationSettings3.GetValue(x, y) : 0.5f;
+                float value1 = mapProvider1 ? mapProvider1.GetValue(x, y) : 0.5f;
+                float value2 = mapProvider2 ? mapProvider2.GetValue(x, y) : 0.5f;
+                float value3 = mapProvider3 ? mapProvider3.GetValue(x, y) : 0.5f;
 
                 pixels[j * resolution + i] = new Color(value1, value2, value3, 1);
             }
