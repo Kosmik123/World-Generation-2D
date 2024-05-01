@@ -7,20 +7,23 @@ namespace WorldGeneration2D
     [CreateAssetMenu]
     public class PerlinMapValueProvider : MapValueProvider
     {
-        [SerializeField]
-        private Octave[] octaves;
+        public static AnimationCurve LinearCurve => new AnimationCurve(new Keyframe(0, 0, 0.5f, 0.5f), new Keyframe(1, 1, 0.5f, 0.5f));
 
         [SerializeField]
+        private Octave[] octaves;
+        [SerializeField]
         private Vector2 noiseScale;
+        [SerializeField]
+        private AnimationCurve curve = LinearCurve;
 
         private void Reset()
         {
             noiseScale = Vector2.one;
         }
 
-        public override float GetValue(float x, float y) => GetValue(x, y, noiseScale, octaves);
+        public override float GetValue(float x, float y) => GetValue(x, y, noiseScale, octaves, curve);
 
-        public static float GetValue(float x, float y, Vector2 noiseScale, IReadOnlyList<Octave> octaves)
+        public static float GetValue(float x, float y, Vector2 noiseScale, IReadOnlyList<Octave> octaves, AnimationCurve curve)
         {
             float noiseValue = 0;
             Vector2 positionScale = noiseScale;
@@ -39,7 +42,7 @@ namespace WorldGeneration2D
             }
 
             float maxPossibleValue = 2 - 1f / (1 << (octavesCount - 1));
-            return noiseValue / maxPossibleValue;
+            return curve.Evaluate(noiseValue / maxPossibleValue);
         }
     }
 

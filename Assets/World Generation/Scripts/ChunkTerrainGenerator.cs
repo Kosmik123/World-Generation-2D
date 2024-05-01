@@ -48,7 +48,7 @@ namespace WorldGeneration2D
                     var tilePosition = Chunk.Coord * settings.RealChunkSize + startingTileLocalPosition + new Vector2(i, j);
                     
                     var temperature = temperatureMapProvider.GetValue(tilePosition.x, tilePosition.y);
-                    var humidity = temperatureMapProvider.GetValue(tilePosition.x, tilePosition.y);
+                    var humidity = humidityMapProvider.GetValue(tilePosition.x, tilePosition.y);
 
                     int tileIndex = Mathf.Clamp(Mathf.FloorToInt((humidity + temperature) / 2 * tiles.Length), 0, tiles.Length - 1);
 

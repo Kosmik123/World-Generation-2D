@@ -16,4 +16,28 @@ MonoBehaviour:
   - offset: {x: 967.9, y: -999}
   - offset: {x: 1109.1, y: -975.9}
   - offset: {x: 1034.8, y: -942.1}
-  noiseScale: {x: 10, y: 10}
+  noiseScale: {x: 20, y: 20}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.20870209
+      value: 0
+      inSlope: -0.15018593
+      outSlope: -0.15018593
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13119344
+    - serializedVersion: 3
+      time: 0.795105
+      value: 1.0070763
+      inSlope: -0.16152763
+      outSlope: -0.16152763
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14446163
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

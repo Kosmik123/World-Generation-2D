@@ -13,6 +13,38 @@ MonoBehaviour:
   m_Name: Small Scale Generation Settings
   m_EditorClassIdentifier: 
   octaves:
-  - offset: {x: -75.24, y: 75.2}
-  - offset: {x: 84.8, y: -57.1}
+  - offset: {x: -78.2, y: 75.2}
   noiseScale: {x: 10, y: 10}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.3008957
+      value: 0.0047302246
+      inSlope: -0.15018593
+      outSlope: -0.15018593
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.13119344
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: -0.03508453
+      outSlope: -0.03508453
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1344431
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.69525146
+      value: -0.0047302246
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
