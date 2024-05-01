@@ -1273,6 +1273,7 @@ GameObject:
   - component: {fileID: 6141789009585349542}
   - component: {fileID: 6190910005819814282}
   - component: {fileID: 2855328779573725517}
+  - component: {fileID: 5810709240991767761}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -1356,3 +1357,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d9d702210436f0499defb24c8d9f6e5, type: 2}
   - {fileID: 11400000, guid: dd65e4c5db190fc40a81e441ade1aa30, type: 2}
   - {fileID: 11400000, guid: 26abb878881bbf34fa0d7a63b8dd69ff, type: 2}
+--- !u!114 &5810709240991767761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040820628054259466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b917d2bc0bbd24f80580565ba1d35e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcsPrototypes:
+  - {fileID: 6998404558447476660, guid: d65960d888c3b344bb5cb241cc445854, type: 3}
+  - {fileID: 5159522095080753803, guid: 69483dbdce7ee9946b766fc73c3fc2b8, type: 3}
+  - {fileID: 2214269896569917592, guid: 7751b71b01e527340adf7dfeaba95196, type: 3}
+  - {fileID: 7062867844323365749, guid: 03d42ad1ccd21784f8399718d9970c4e, type: 3}
+  spawnProbability: 0.1
