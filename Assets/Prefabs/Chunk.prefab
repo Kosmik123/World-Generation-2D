@@ -1353,4 +1353,5 @@ MonoBehaviour:
   terrainTilemap: {fileID: 5738387078073617058}
   terrainGenerators:
   - {fileID: 11400000, guid: 17d076dca4442ce4bb4d7d19dd268181, type: 2}
+  - {fileID: 11400000, guid: 8d9d702210436f0499defb24c8d9f6e5, type: 2}
   - {fileID: 11400000, guid: dd65e4c5db190fc40a81e441ade1aa30, type: 2}

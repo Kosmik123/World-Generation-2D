@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4824adef6a1ff514cb8ba231bf1b1de7, type: 3}
+  m_Name: Roads Terrain Generator
+  m_EditorClassIdentifier: 
+  riversMapProvider: {fileID: 11400000, guid: aac2291d35562c04e8db168f853d94ee, type: 2}
+  riverTile: {fileID: 11400000, guid: 1b04e84ae1304b7409e61f1e0ede54f4, type: 2}
