@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 021d58daaf2ccb947b8d7bb68fecc2f3, type: 3}
+  m_Name: Biomes Terrain Generator
+  m_EditorClassIdentifier: 
+  temperatureMapProvider: {fileID: 11400000, guid: 1ca0ce42bb6421d45b6768aaaa0f29cd, type: 2}
+  humidityMapProvider: {fileID: 11400000, guid: 89076aea293db704cb129ceae1d55f68, type: 2}
+  biomes:
+  - {fileID: 11400000, guid: 84f8de7712a4ade44a1424ef50188d81, type: 2}
+  - {fileID: 11400000, guid: d061c7603c2a71e4eb8a6083de472637, type: 2}
+  - {fileID: 11400000, guid: a140649a66780444db3675e9ed188e1f, type: 2}
+  - {fileID: 11400000, guid: 306390464087b084c9534957d2e253a5, type: 2}
+  - {fileID: 11400000, guid: 94b0e51019368dd46b0f125de0760337, type: 2}
+  - {fileID: 11400000, guid: 0a8dd9090c637ea46ac53aeb62a0fb60, type: 2}

@@ -1,41 +1,21 @@
 ﻿using UnityEngine;
-using UnityEngine.Tilemaps;
 
 namespace WorldGeneration2D
 {
-    [RequireComponent(typeof(Chunk))]
-    public class ChunkTerrainGenerator : MonoBehaviour
+    [CreateAssetMenu]
+    public class BiomesTerrainGenerator : TerrainGenerator
     {
-        private Chunk _chunk;
-        public Chunk Chunk
-        {
-            get
-            {
-                if (_chunk == null)
-                    _chunk = GetComponent<Chunk>();
-                return _chunk;
-            }
-        }
-
         [SerializeField]
         private MapValueProvider temperatureMapProvider;
         [SerializeField]
         private MapValueProvider humidityMapProvider;
 
         [SerializeField]
-        private Tilemap terrainTilemap;
-
-        [SerializeField]
         private BiomeData[] biomes;
 
-        private void Start()
+        public override void ApplyTerrain(ChunkTerrain chunkTerrain)
         {
-            GenerateTerrain();
-        }
-
-        public void GenerateTerrain()
-        {
-            var settings = Chunk.Settings;
+            var settings = chunkTerrain.Chunk.Settings;
             Vector2Int halfChunkSize = settings.ChunkSize / 2;
             var startingTileLocalPosition = (-settings.RealChunkSize + settings.TileSize) / 2;
             for (int j = 0; j < settings.ChunkSize.y; j++)
@@ -45,11 +25,11 @@ namespace WorldGeneration2D
                     int tileCoordX = i - halfChunkSize.x;
                     int tileCoordY = j - halfChunkSize.y;
 
-                    var tilePosition = Chunk.Coord * settings.RealChunkSize + startingTileLocalPosition + new Vector2(i, j);
+                    var tilePosition = chunkTerrain.Chunk.Coord * settings.RealChunkSize + startingTileLocalPosition + new Vector2(i, j);
                     var climate = GetClimateData(tilePosition.x, tilePosition.y);
 
                     var biome = GetBiome(climate.temperature, climate.humidity);
-                    terrainTilemap.SetTile(new Vector3Int(tileCoordX, tileCoordY), biome.Tile);
+                    chunkTerrain.TerrainTilemap.SetTile(new Vector3Int(tileCoordX, tileCoordY), biome.Tile);
                 }
             }
         }
@@ -63,10 +43,10 @@ namespace WorldGeneration2D
 
         private BiomeData GetBiome(float temperature, float humidity)
         {
-            foreach(var biome in biomes) 
+            foreach (var biome in biomes)
                 if (biome.CheckCondition(Mathf.Clamp01(temperature), Mathf.Clamp01(humidity)))
                     return biome;
-            
+
             return null;
         }
     }

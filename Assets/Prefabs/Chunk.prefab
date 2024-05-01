@@ -1271,8 +1271,8 @@ GameObject:
   - component: {fileID: 3855200411657393975}
   - component: {fileID: 1784562447151732814}
   - component: {fileID: 6141789009585349542}
-  - component: {fileID: 3979473590617732671}
   - component: {fileID: 6190910005819814282}
+  - component: {fileID: 2855328779573725517}
   m_Layer: 0
   m_Name: Chunk
   m_TagString: Untagged
@@ -1326,28 +1326,6 @@ MonoBehaviour:
   mapProvider2: {fileID: 11400000, guid: 637a67df5db81fb42accb3bf7da0c4d2, type: 2}
   mapProvider3: {fileID: 11400000, guid: 89076aea293db704cb129ceae1d55f68, type: 2}
   spriteRenderer: {fileID: 5476940928475246835}
---- !u!114 &3979473590617732671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5040820628054259466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb915a7eca903742abe021b77da126b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  temperatureMapProvider: {fileID: 11400000, guid: 1ca0ce42bb6421d45b6768aaaa0f29cd, type: 2}
-  humidityMapProvider: {fileID: 11400000, guid: 89076aea293db704cb129ceae1d55f68, type: 2}
-  terrainTilemap: {fileID: 5738387078073617058}
-  biomes:
-  - {fileID: 11400000, guid: 84f8de7712a4ade44a1424ef50188d81, type: 2}
-  - {fileID: 11400000, guid: d061c7603c2a71e4eb8a6083de472637, type: 2}
-  - {fileID: 11400000, guid: a140649a66780444db3675e9ed188e1f, type: 2}
-  - {fileID: 11400000, guid: 306390464087b084c9534957d2e253a5, type: 2}
-  - {fileID: 11400000, guid: 94b0e51019368dd46b0f125de0760337, type: 2}
-  - {fileID: 11400000, guid: 0a8dd9090c637ea46ac53aeb62a0fb60, type: 2}
 --- !u!156049354 &6190910005819814282
 Grid:
   m_ObjectHideFlags: 0
@@ -1360,3 +1338,18 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &2855328779573725517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040820628054259466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aff80e1bcc637834a800b2d52016d54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrainGenerators:
+  - {fileID: 11400000, guid: 17d076dca4442ce4bb4d7d19dd268181, type: 2}
+  terrainTilemap: {fileID: 5738387078073617058}

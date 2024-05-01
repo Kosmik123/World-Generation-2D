@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace WorldGeneration2D
 {
-    [CustomEditor(typeof(ChunkTerrainGenerator))]
+    [CustomEditor(typeof(BiomesTerrainGenerator))]
     public class ChunkTerrainGeneratorEditor : Editor
     {
         private const int resolution = 100;
@@ -46,7 +46,7 @@ namespace WorldGeneration2D
 
         private void PopulatePreviewTexture()
         {
-            var biomeGenerator = target as ChunkTerrainGenerator;
+            var biomeGenerator = target as BiomesTerrainGenerator;
             float halfResolution = resolution / 2;
             for (int j = 0; j < resolution; j++)
             {

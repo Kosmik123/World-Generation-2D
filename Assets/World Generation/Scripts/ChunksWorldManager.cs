@@ -39,8 +39,8 @@ namespace WorldGeneration2D
         {
             foreach (var coord in coordsVisibleLastFrame)
                 if (chunksByCoord.TryGetValue(coord, out var chunk))
-                    if (chunk)
-                        chunk.gameObject.SetActive(false);
+                    chunk.gameObject.SetActive(false);
+
             coordsVisibleLastFrame.Clear();
 
             float yExtent = observerCamera.orthographicSize;
