@@ -14,6 +14,7 @@ namespace WorldGeneration2D
         private Camera observerCamera;
 
         private readonly Dictionary<Vector2Int, Chunk> chunksByCoord = new Dictionary<Vector2Int, Chunk>();
+        private readonly List<Vector2Int> coordsVisibleLastFrame = new List<Vector2Int>();
 
         [SerializeField]
         private int chunksCount = 0;
@@ -36,6 +37,12 @@ namespace WorldGeneration2D
 
         private void UpdateChunks()
         {
+            foreach (var coord in coordsVisibleLastFrame)
+                if (chunksByCoord.TryGetValue(coord, out var chunk))
+                    if (chunk)
+                        chunk.gameObject.SetActive(false);
+            coordsVisibleLastFrame.Clear();
+
             float yExtent = observerCamera.orthographicSize;
             float xExtent = yExtent * observerCamera.aspect;
 
@@ -53,12 +60,14 @@ namespace WorldGeneration2D
                 for (int i = bottomLeft.x - 1; i <= topRight.x + 1; i++)
                 {
                     var coord = new Vector2Int(i, j);
-                    if (chunksByCoord.ContainsKey(coord) == false)
+                    if (chunksByCoord.TryGetValue(coord, out var chunk) == false)
                     {
-                        var chunk = Instantiate(chunkPrototype, new Vector3(chunkSettings.RealChunkSize.x * i, chunkSettings.RealChunkSize.y * j, 0), Quaternion.identity, transform);
+                        chunk = Instantiate(chunkPrototype, new Vector3(chunkSettings.RealChunkSize.x * i, chunkSettings.RealChunkSize.y * j, 0), Quaternion.identity, transform);
                         chunk.Init(chunkSettings, coord);
                         chunksByCoord.Add(coord, chunk);
                     }
+                    coordsVisibleLastFrame.Add(coord);
+                    chunk.gameObject.SetActive(true);
                 }
             }
             chunksCount = chunksByCoord.Count;
