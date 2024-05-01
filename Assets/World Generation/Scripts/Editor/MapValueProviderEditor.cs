@@ -60,6 +60,7 @@ namespace WorldGeneration2D
                     colors[j * resolution + i] = Color.Lerp(Color.black, Color.white, pixelValue);
                 }
             }
+
             PreviewTexture.SetPixels32(colors);
             PreviewTexture.Apply();
         }
